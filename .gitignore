@@ -1,0 +1,20 @@
+/factory/target/
+/abstractFactory/target/
+/prototype/target/
+/facade/target/
+/3. factory/target/
+/4. abstractFactory/target/
+/5. prototype/target/
+/6. facade/target/
+/6. facade - copia/target/
+/11. observer/target/
+/7. decorator/target/
+/ec.com.learning.structural.proxy/target/
+/8. proxy/target/
+/09. command/target/
+/09. command - copia/target/
+/08. proxy - copia/target/
+/strategy/target/
+/12. strategy/target/
+/13. dao/target/
+/14. dependencyInjection/target/
