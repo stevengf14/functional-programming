@@ -6,7 +6,7 @@ import java.util.function.BiFunction;
  *
  * @author Steve
  */
-public class C2_V4_FunctionsAsArguments {
+public class C2_V5_FunctionsAsArguments {
     
     protected static class MyMath {
         

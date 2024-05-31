@@ -6,7 +6,7 @@ import java.util.function.Function;
  *
  * @author Steve
  */
-public class C2_V5_ReturningFunctions {
+public class C2_V6_ReturningFunctions {
 
     protected static class MyMath {
 

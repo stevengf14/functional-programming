@@ -4,7 +4,7 @@ package ec.com.linkedinlearning.functionalprogramming;
  *
  * @author Steve
  */
-public class C2_V3_FunctionsAsData {
+public class C2_V4_FunctionsAsData {
 
     protected static class Person {
 
