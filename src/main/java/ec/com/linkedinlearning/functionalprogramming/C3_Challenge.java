@@ -3,6 +3,7 @@ package ec.com.linkedinlearning.functionalprogramming;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
 /**
@@ -33,6 +34,12 @@ public class C3_Challenge {
             this.color = color;
             this.price = price;
         }
+
+        @Override
+        public String toString() {
+            return "Car{" + "make=" + make + ", color=" + color + ", price=" + price + '}';
+        }
+
     }
 
     static class Employee {
@@ -59,6 +66,9 @@ public class C3_Challenge {
             new Person("Jack", 27),};
         List<Person> people = new ArrayList<>(Arrays.asList(peopleArr));
 
+        List<String> names = people.stream().map(person -> person.name).collect(Collectors.toList());
+        System.out.println("People's names: " + names);
+
         Car[] carsArr = {
             new Car("Chevy", "red", 45000f),
             new Car("Ford", "blue", 23000f),
@@ -67,7 +77,9 @@ public class C3_Challenge {
             new Car("Renault", "blue", 150000f),};
         List<Car> cars = new ArrayList<>(Arrays.asList(carsArr));
 
-        // Answer 2 goes here
+        List<Car> blueCars = cars.stream().filter(car -> car.color.equals("blue")).collect(Collectors.toList());
+        System.out.println("Blue cars: " + blueCars);
+
         Employee[] employeesArr = {
             new Employee("John", 34, "developer", 80000f),
             new Employee("Hannah", 24, "developer", 95000f),
@@ -77,7 +89,9 @@ public class C3_Challenge {
             new Employee("Nancy", 29, "developer", 75000f),};
         List<Employee> employees = new ArrayList<>(Arrays.asList(employeesArr));
 
-        // Answer 3 goes here
+        Float sumOfSalaries = employees.stream().map(employee -> employee.salary)
+                .reduce(0f, (acc, x) -> acc + x);
+        System.out.println("Sum of Salaries: " + sumOfSalaries);
     }
 
 }
