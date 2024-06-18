@@ -3,6 +3,8 @@ package ec.com.linkedinlearning.functionalprogramming;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -35,7 +37,19 @@ public class C3_Challenge2 {
             new Employee("Nancy", 29, "developer", 75000f),};
         List<Employee> employees = new ArrayList<>(Arrays.asList(employeesArr));
 
-        // Your answer goes here
+        Map<String, Float> averageSalariesMap = employees
+                .stream()
+                .collect(Collectors.groupingBy(employee -> employee.jobTitle))
+                .entrySet()
+                .stream()
+                .collect(Collectors.toMap(
+                        entry -> entry.getKey(),
+                        entry -> entry.getValue()
+                                .stream()
+                                .map(employee -> employee.salary)
+                                .reduce(0f, (acc, x) -> acc + x) / entry.getValue().size()));
+
+        System.out.println(averageSalariesMap);
     }
 
 }
