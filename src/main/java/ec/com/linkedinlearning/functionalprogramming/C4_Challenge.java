@@ -7,9 +7,11 @@ package ec.com.linkedinlearning.functionalprogramming;
 public class C4_Challenge {
 
     static int fibonacci(int x) {
-        // Your code goes here
+        if (x <= 2) {
+            return 1;
+        }
+        return fibonacci(x - 1) + fibonacci(x - 2);
 
-        return 1;
     }
 
     public static void main(String[] args) {
